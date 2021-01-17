@@ -1,0 +1,89 @@
+—Punishment tasks URI
+
+—2602
+select name from customers where state = 'RS';
+
+—2604
+SELECT id, name FROM products WHERE price < 10 OR price > 100; 
+
+—2605
+SELECT products.name, providers.name 
+FROM products INNER JOIN providers 
+ON products.id_providers = providers.id where products.id_categories = 6;
+
+—2606
+SELECT products.id, products.name 
+FROM products 
+INNER JOIN categories 
+ON products.id_categories = categories.id 
+WHERE categories.name LIKE 'super%';
+
+—2609 runtime error
+SELECT categories.name, SUM(products.amount) 
+FROM products 
+INNER JOIN categories 
+ON products.id_categories = categories.id;
+
+—2610
+SELECT CAST(AVG(price) AS DECIMAL(10,2)) FROM products;
+
+
+
+
+— WEEK 3 TASKS URI & HACKER RANK 
+
+— 2615
+Select  distinct  city from customers;
+
+—2622
+select customers.name from customers inner join legal_person on customers.id=legal_person.id_customers;
+
+—2746 error
+update virus set name = replace(name, 'H1', 'X');
+Select name=translate(name, ‘H1’, ‘X’) from virus;
+
+—2607
+ select city from providers order by city asc;
+
+—2603
+select name, street from customers where city='Porto Alegre';
+
+—2608
+select max(price), min(price) from products;
+
+—Select All
+select * from city;
+
+—Select By ID
+select * from city where ID=1661;
+
+—Japanese Cities’ Attributes
+select * from city where COUNTRYCODE='JPN';
+
+—Japanese Cities’ Names
+select NAME from city where COUNTRYCODE='JPN';
+
+—Weather Observation Station 3
+select distinct CITY from STATION as st where st.id % 2 = 0;
+
+—Weather Observation Station 4
+select count(CITY) - count(distinct CITY) as diff from station;
+
+—Weather Observation Station 5
+select CITY, STATE from STATION;
+
+—Weather Observation Station 7
+select distinct city from station where substr(city, -1) = 'a' 
+or substr(city, -1) = 'e' or substr(city, -1) = 'i' 
+or substr(city, -1) = 'u'  or substr(city, -1) = 'o';
+
+—Higher Than 75 Marks
+select name from students where marks > 75 order by substr(name, -3), ID;
+
+—Employee Names
+select name from employee order by name;
+
+
+
+
+
